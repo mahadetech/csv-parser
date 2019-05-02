@@ -64,4 +64,11 @@ public final class User {
     public void setWeight(double weight) {
         this.weight = weight;
     }
+    public String toString()
+    {
+        return "User [Id=" + id + ", Name=" + name + ", age=" + age + ", Height="+ height +"]";
+
+    }
+
+
 }

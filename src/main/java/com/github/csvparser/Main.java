@@ -1,52 +1,61 @@
 package com.github.csvparser;
+import java.io.IOException;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
 
-// MY ist project
+import com.github.csvparser.models.BasicCsvReader;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
+
+
+
+
 public class Main {
 
-    // 0. Add apache commons csv as a maven dependency
-
-    // 1. Read the CSV file using apache commons csv
-
-    // 2. Read each line and convert it to the java object (User)
-
-    // 3. Print the Java object
-
-    // 4. Find the User who has the maximum age and height and print this object
-    public static final String SAMPLE_CSV_FILE_PATH = "./users.csv";
-    public static void csvreadfie()
+    public static void main(String[] args)
     {
         try {
-                Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
-                CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
 
-        }catch(Exception e)
-        {
-            System.out.print("error");
+            //We have to create CSVPrinter class object
+
+            Writer writer = Files.newBufferedWriter(Paths.get("student.csv"));
+            CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("Student Name", "Fees"));
+
+            //Writing records in the generated CSV file
+            csvPrinter.printRecord("Akshay Sharma", 1000);
+            csvPrinter.printRecord("Rahul Gupta", 2000);
+            csvPrinter.printRecord("Jay Karn", 3000);
+
+            //writing record in the form of list
+            csvPrinter.printRecord(Arrays.asList("Dev Bhatia", 4000));
+
+            csvPrinter.flush();
+            BasicCsvReader a =new BasicCsvReader();
+            a.readcsv();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        for (CSVRecord csvRecord : csvParser) {
-            String name = csvRecord.get(0);
-            double age = csvRecord.get(1);
-            double height = csvRecord.get(2);
-            double weight = csv.get(3);
-            String color =csv.get(4);
-            String country = csvRecord.get(5);
-
-            System.out.println("Record No - " + csvRecord.getRecordNumber());
-            System.out.println("---------------");
-            System.out.println("Name : " + name);
-            System.out.println("Age: " + age);
-            System.out.println("Height: " + height);
-            System.out.println("Weight: " + weight);
-            System.out.println("Color: " + color);
-            System.out.println("Country : " + country);
-            System.out.println("---------------\n\n");
-
-
-        }
-
-
+    }
 }
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
