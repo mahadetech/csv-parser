@@ -20,7 +20,7 @@ public class Main {
         a.readCSV();
     }
 
-    public void readCSV() throws Exception {
+    private void readCSV() throws Exception {
         Path fiiePath = Paths.get(ClassLoader.getSystemResource("users.csv").toURI());
         BufferedReader reader = Files.newBufferedReader(fiiePath);
         CSVParser csvParser = CSVFormat.EXCEL.withFirstRecordAsHeader().parse(reader);
@@ -44,21 +44,3 @@ public class Main {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
