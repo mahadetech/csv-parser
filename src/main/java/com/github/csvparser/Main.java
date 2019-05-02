@@ -1,4 +1,5 @@
 package com.github.csvparser;
+
 import java.io.BufferedReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,7 +12,6 @@ import com.github.csvparser.models.User;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-
 
 public class Main {
 

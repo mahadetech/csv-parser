@@ -9,7 +9,7 @@ public final class User {
     private double height;
     private double weight;
 
-    public User(int id, String name, int age, double height,double weight, String color, String country) {
+    public User(int id, String name, int age, double height, double weight, String color, String country) {
         super();
         this.id = id;
         this.name = name;
@@ -78,9 +78,7 @@ public final class User {
 
     @Override
     public String toString() {
-        return "Employee [Id=" + id + ", name=" + name
-                + ", age=" + age + ", height=" + height + "]";
-
+        return "Employee [Id=" + id + ", name=" + name + ", age=" + age + ", height=" + height + "]";
 
     }
 }
