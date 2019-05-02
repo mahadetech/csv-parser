@@ -9,6 +9,17 @@ public final class User {
     private double height;
     private double weight;
 
+    public User(int id, String name, int age, double height,double weight, String color, String country) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+        this.color = color;
+        this.country = country;
+    }
+
     public int getId() {
         return id;
     }
@@ -64,11 +75,12 @@ public final class User {
     public void setWeight(double weight) {
         this.weight = weight;
     }
-    public String toString()
-    {
-        return "User [Id=" + id + ", Name=" + name + ", age=" + age + ", Height="+ height +"]";
+
+    @Override
+    public String toString() {
+        return "Employee [Id=" + id + ", name=" + name
+                + ", age=" + age + ", height=" + height + "]";
+
 
     }
-
-
 }

@@ -14,31 +14,17 @@ import org.apache.commons.csv.CSVPrinter;
 
 public class Main {
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
-        try {
 
-            //We have to create CSVPrinter class object
 
-            Writer writer = Files.newBufferedWriter(Paths.get("student.csv"));
-            CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("Student Name", "Fees"));
-
-            //Writing records in the generated CSV file
-            csvPrinter.printRecord("Akshay Sharma", 1000);
-            csvPrinter.printRecord("Rahul Gupta", 2000);
-            csvPrinter.printRecord("Jay Karn", 3000);
-
-            //writing record in the form of list
-            csvPrinter.printRecord(Arrays.asList("Dev Bhatia", 4000));
-
-            csvPrinter.flush();
             BasicCsvReader a =new BasicCsvReader();
-            a.readcsv();
+            //a.readcsv();
+            a.csvread();
 
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+
     }
 }
 
