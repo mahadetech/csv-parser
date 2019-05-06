@@ -1,4 +1,4 @@
-package com.github.csvparser;
+package com.github.csvparser.models;
 
 import java.io.BufferedReader;
 import java.nio.file.Files;
@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-import com.github.csvparser.models.User;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
